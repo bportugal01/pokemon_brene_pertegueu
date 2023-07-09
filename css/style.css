@@ -1,0 +1,196 @@
+
+/* WRAPPER */
+
+.wrapper {
+	max-width: 1024px;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+	margin: 48px auto;
+}
+
+/* POKEMON CONTAINER */
+
+.pokemon-container {
+	list-style: none;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px;
+
+	margin-top: 24px;
+}
+
+/* CARDS */
+
+.card {
+	width: 250px;
+	height: 300px;
+
+	background: #15541f60;
+	border-radius: 4px;
+	text-align: center;
+
+	background-image: url("../assets/MicrosoftTeams-image.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50px -30px;
+
+	cursor: pointer;
+}
+
+.card .sprite {
+	width: 100%;
+	image-rendering: pixelated;
+}
+
+.card {
+	border: 3px solid #0f4618;
+
+}
+
+.card .name {
+	text-transform: capitalize;
+	font-size: 18px;
+}
+
+/* .card:hover
+{
+		-webkit-transform: scale(0.8);
+       
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+}*/
+
+.card .back {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	row-gap: 16px;
+	height: 100%;
+}
+
+.card.flipped .back {
+	display: flex;
+}
+
+.card.flipped .front {
+	display: none;
+}
+
+.types {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.type {
+	padding: 4px 8px;
+	border-radius: 4px;
+	color: white;
+	text-transform: capitalize;
+}
+
+.stat {
+	font-size: 14px;
+	text-transform: capitalize;
+}
+
+/* PAGINATION */
+
+.pagination {
+	margin-top: 32px;
+	display: flex;
+	align-items: center;
+
+	column-gap: 8px;
+}
+
+.pagination button {
+	padding: 12px 16px;
+	background: #196020;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.pagination button:hover {
+	background: #529158;
+}
+
+.pagination button:disabled {
+	opacity: 0.7;
+}
+
+.hidden {
+	display: none;
+}
+
+@keyframes spinner {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.spinner {
+	height: 28px;
+	width: 28px;
+	border: 3px solid #196020;
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	animation: spinner 1s linear infinite;
+}
+
+.page-index {
+	width: 28px;
+	font-size: 20px;
+	text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+	margin-top: 32px;
+	opacity: 0.7;
+	font-size: 14px;
+}
+
+
+.card {
+    position: relative;
+}
+
+.card.flipped {
+    animation: flipAnimation 0.5s;
+    transform-style: preserve-3d;
+}
+
+@keyframes flipAnimation {
+    0% {
+        transform: rotateY(180deg);
+    }
+}
+
+.card .back {
+    background-color: #04681e90;
+    color: #fafafa;
+    font-size: 24px;
+    padding: 16px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
